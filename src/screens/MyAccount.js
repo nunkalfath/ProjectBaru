@@ -1,7 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 
-const MyAccount = ({navigation}) => {
+const MyAccount = ({route, navigation}) => {
+  // const {itemId, otherParam} = route.params;
   return (
     <View
       style={{
@@ -14,13 +15,25 @@ const MyAccount = ({navigation}) => {
         title="Go to Login"
         onPress={() => navigation.navigate('Login')}
       />
-      <Text style={styles.TextLogin}>Mau ke Home lagi (push)</Text>
+      {/* <Text style={styles.TextLogin}>Mau ke Home lagi (push)</Text>
       <Button
         title="Go to Home... again"
         onPress={() => navigation.push('Home')}
+      /> */}
+      {/* <Text>Home Screen</Text>
+      <Text>itemId: {JSON.stringify(itemId)}</Text>
+      <Text>otherParam: {JSON.stringify(otherParam)}</Text> */}
+      <Button
+        title="Go to Home... again"
+        onPress={() =>
+          navigation.push('Home', {
+            itemId: Math.floor(Math.random() * 100),
+          })
+        }
       />
       <Text style={styles.TextLogin}>Mau kembali aja lah (go back)</Text>
       <Button title="Go back" onPress={() => navigation.goBack()} />
+
       <Text style={styles.TextLogin}>Mau balik ke awal aja lah (popToTop)</Text>
       <Button
         title="Go back to first screen in stack"

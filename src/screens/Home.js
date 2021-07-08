@@ -26,11 +26,11 @@ const HomeScreen = ({route, navigation}) => {
           })
         }
       />
-      <Text style={styles.TextLogin}>Mau ke Home lagi (push)</Text>
+      {/* <Text style={styles.TextLogin}>Mau ke Home lagi (push)</Text>
       <Button
         title="Go to Home... again"
         onPress={() => navigation.push('Home')}
-      />
+      /> */}
       <Text style={styles.TextLogin}>Mau kembali aja lah (go back)</Text>
       <Button title="Go back" onPress={() => navigation.goBack()} />
       <Text style={styles.TextLogin}>Mau balik ke awal aja lah (popToTop)</Text>
@@ -41,7 +41,7 @@ const HomeScreen = ({route, navigation}) => {
       <Text style={styles.TextLogin}>Mau ke Akun (push)</Text>
       <Button
         title="Go to Account"
-        onPress={() => navigation.push('Account', {userId: 'Jane'})}
+        onPress={() => navigation.push('Account',{userId: 'Jane'})}
       />
     </View>
   );
